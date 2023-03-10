@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!-- второй файл настройки - файл сопоставления: содержит взаимосвязь сопоставления
+ между Java-объектами и таблицами БД, имя должно соответствовать шаблону -> <тип объекта>.hbm.xml -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping> <!-- все свойства определены внутри -->
+    <class name = "Flight" table = "FLIGHT"> <!-- предназначен для определения имени класса POJO и таблицы, которые
+    будут созданы внутри БД в качестве атрибутов, а отношения сопоставления - в качестве значений -->
+        <id name="id" type="int" column="id"> <!-- первичный ключ внутри id -->
+            <generator class="identity"/>
+            <!-- внутри name определяем имя переменной экземпляра -->
+            <!-- имя столбца и тип дынных - column и type -->
+            <!-- generator предоставляют стратегию, с помощью которой необходимо выполнить автоинкремент  -->
+        </id>
+        <!-- все остальные сопоставления переменных экземпляра внутри property -->
+        <property name="flightNumber" column="flight_number" type="string"/>
+        <property name="departure" column="departure" type="string"/>
+        <property name="arrival" column="arrival" type="string"/>
+        <property name="flightDate" column="date" type="string"/>
+        <property name="fare" column="fare" type="int"/>
+    </class>
+</hibernate-mapping>

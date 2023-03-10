@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!-- первый файл настройки: содержит свойства гибернации, такие как
+диалект, класс драйвера, URL-адрес сервера БД, имя пользователя и пароль -->
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration> <!-- все свойства определены внутри -->
+    <session-factory> <!-- здесь указываются свойства БД, к которой необходимо подключиться -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQL57Dialect
+        </property>
+        <property name="hibernate.connection.driver_class">
+            com.mysql.cj.jdbc.Driver
+        </property>
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/Flight_Project
+        </property>
+        <property name="hibernate.connection.username">
+            root
+        </property>
+        <property name="hibernate.connection.password">
+            root123
+        </property>
+        <property name="hbm2ddl.auto"> <!-- это проверяет или экспортирует язык определения данных схемы при создании
+        объекта фабрики сеансов. Здесь мы прописали операцию обновления, которая обновит БД, не затрагивая ранее записанные данные.
+        Недостает еще нескольких - проверка, создание и создание-удаления -->
+            update
+        </property>
+    </session-factory>
+</hibernate-configuration>
