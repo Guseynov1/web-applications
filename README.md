@@ -1,2 +1,2 @@
 # web-applications
-# Spring / RUST / Hibernate
+# Spring / REST / Hibernate
