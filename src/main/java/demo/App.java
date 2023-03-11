@@ -17,9 +17,9 @@ public class App {
     }
 
     @Bean
-    public Customer customer(@Autowired String greenStreet) { // аннотация - отмечает параметр метода, который будет авто введен
+    public Customer customer(@Autowired String greenStreet) {
         return new Customer("Ben Miller", greenStreet);
-    } // метод, который возвращает объект класса Customer в виде компонента
+    }
 
     // Spring DI вводит компонент address в этот метод, и этот компонент может быть использован для создания нового объекта класса Customer.
     // Инъекция работает, потому что тип нужного нам компонента совпадает с типом компонента, созданного ранее(34), и Spring Container может вводить этот компонент.
@@ -38,7 +38,7 @@ public class App {
     }
 
     // TODO: start
-    @Configuration // бобы объявляются в классах с такой аннотацией
+    @Configuration
     public class Addresses {
         @Bean("greenStreet")
         public String address() {
